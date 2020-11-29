@@ -6,11 +6,11 @@
 </head>
 <body>
 <ul>
-<li><a href="create.php">Create</a></li>
-<li><a href="browseable-list.php">Read</a></li>
+<li><a href="index.php?action=create">Create</a></li>
+<li><a href="index.php?action=list">Read</a></li>
 </ul>
 <h1>Add a new film</h1>
-<form action="save.php" method="post">
+<form action="index.php?action=save" method="post">
 <div>
 <label for="title">Title:</label>
 <input type="text" id="title" name="title">

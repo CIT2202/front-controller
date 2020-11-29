@@ -6,15 +6,15 @@
 <meta http-equiv="content-type" content="text/html;charset=utf-8" />
 </head>
 <body>
-<ul>
-<li><a href="create.php">Create</a></li>
-<li><a href="list.php">Read</a></li>
-</ul>
+  <ul>
+  <li><a href="index.php?action=create">Create</a></li>
+  <li><a href="index.php?action=list">Read</a></li>
+  </ul>
 <?php
 //loop over the array of films
 foreach ($films as $film) {
     echo "<p>";
-    echo "<a href='details.php?id=".$film["id"]."'>";
+    echo "<a href='index.php?action=details&id=".$film["id"]."'>";
     echo $film["title"];
     echo "</a>";
     echo "</p>";
@@ -22,4 +22,3 @@ foreach ($films as $film) {
 ?>
 </body>
 </html>
-
