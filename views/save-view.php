@@ -7,10 +7,10 @@
 <body>
 <ul>
 <li><a href="create.php">Create</a></li>
-<li><a href="list.php">Read</a></li>
+<li><a href="browseable-list.php">Read</a></li>
 </ul>
 <?php
-echo $msg;
+echo "<p>Added the details for {$title}.</p>"
 ?>
 </body>
 </html>

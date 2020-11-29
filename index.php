@@ -4,10 +4,10 @@
 <title>PHP, PDO Examples</title>
 <meta http-equiv="content-type" content="text/html;charset=utf-8" />
 </head>
-<body>	
+<body>
 <ul>
 	<li><a href="create.php">Create</a></li>
-	<li><a href="list.php">Read</a></li>
+	<li><a href="browseable-list.php">Read</a></li>
 </ul>
 </body>
 </html>
