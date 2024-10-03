@@ -18,7 +18,7 @@ function show()
     //Set the title of the page
     $title = "Show the details for a film";
     //Load the view
-    include("./views/show.view.php");
+    require("./views/show.view.php");
 }
 
 function create()
@@ -26,7 +26,7 @@ function create()
     //Set the title of the page
     $title = "Add new film";
     //No model functionality need, just need to load the view
-    include("./views/create.view.php");
+    require("./views/create.view.php");
 }
 
 function store()
