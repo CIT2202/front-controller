@@ -1,9 +1,9 @@
 <?php
 //Load the models file
-require("models/film.php");
+require("models/film-model.php");
 //Load the controller file
-
 require("controllers/filmController.php");
+
 $action = "/";
 if (isset($_GET['action'])) {
     $action = $_GET['action'];
@@ -16,13 +16,13 @@ echo "<p>The action is <strong>{$action}</strong></p>";
 if ($action === "/") {
     //Call index() in filmController
     index();
-} else if ($action === "show") {
+} else if ($action === "show" && isset($_GET['id'])) {
     //Call show() in filmController
     show();
-} else if ($action === "create") {
+} else if ($action === "create" ) {
     //Call create() in filmController
     create();
 } else if ($action === "store") {
-    //Call store() in filmController
-    store();
+    //Call save() in filmController
+    save();
 }

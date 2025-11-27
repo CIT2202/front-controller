@@ -10,15 +10,14 @@ Usually whenever a user requests a webpage we perform common tasks such as authe
 
 - Download and unzip this repository.
 - Move it into the htdocs folder in XAMPP.
-- Change the database settings in _/models/film.php_ to match your database name, username and password.
+- Change the database settings in _/models/film-model.php_ to match your database name, username and password.
 - Open _index.php_ in a web browser. Check you can view film details and add a new film. You should find that the *about*, *update* and *delete* pages don't work.
 - Notice that even when viewing the details for a film or when adding a new film, the URL still says _index.php_. This _index.php_ is our front controller.
 - Have a good look at _index.php_
 
 ```php
 //Load the models file
-require("models/film.php");
-
+require("models/film-model.php");
 //Load the controller file
 require("controllers/filmController.php");
 
@@ -27,22 +26,22 @@ if (isset($_GET['action'])) {
     $action = $_GET['action'];
 }
 
-//Just for testing purposes, so we can see the action.
+//Just for test purposes, so we can see the action.
 echo "<p>The action is <strong>{$action}</strong></p>";
 
 //Test the action value and call a function in controllers/filmController.php
 if ($action === "/") {
     //Call index() in filmController
     index();
-} else if ($action === "show") {
+} else if ($action === "show" && isset($_GET['id'])) {
     //Call show() in filmController
     show();
-} else if ($action === "create") {
+} else if ($action === "create" ) {
     //Call create() in filmController
     create();
 } else if ($action === "store") {
-    //Call store() in filmController
-    store();
+    //Call save() in filmController
+    save();
 }
 ```
 
@@ -61,7 +60,7 @@ Then, in _index.php_ add an `else` statement that will test if the action is _ab
 Next, think about how the *update* operation works. First, you need to display the form that will allow the user to edit the details for a chosen film. In _filmController.php_ there is already a function called _edit_. Add some code in this function that will:
 
 - Get an id from the query string.
-- Call `find()` in the _film.php_ file.
+- Call `find()` in the _film-model.php_ file.
 - Load _edit.view.php_.
 
 Again, you will need to edit _index.php_ by adding an `else` statement that will test if the action is _edit_. If it is, the ```edit()``` function in _filmController.php_ should be called.
@@ -69,7 +68,7 @@ Again, you will need to edit _index.php_ by adding an `else` statement that will
 Next, add code in the ```updateFilm()``` function. Add some code that will:-
 
 - Get the data from the form.
-- Call ```update()``` in the _film.php_ file.
+- Call ```update()``` in the _film-model.php_ file.
 - Re-direct the user back to the _index.php_ page.
 - Again, you will need to make changes to _index.php_ so that it tests if the action is 'update'.
 
