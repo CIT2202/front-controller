@@ -10,7 +10,7 @@ if (isset($_GET['action'])) {
 }
 
 //Just for test purposes, so we can see the action.
-echo "<p>The action is <strong>{$action}</strong></p>";
+//echo "<p>The action is <strong>{$action}</strong></p>";
 
 //Test the action value and call a function in controllers/filmController.php
 if ($action === "/") {
